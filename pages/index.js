@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
+import { useBackground } from '../context/BackgroundContext'
 
 export default function Home() {
+  const { setBackground } = useBackground()
   return (
     <div className={styles.container}>
       <Head>
@@ -11,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main onMouseEnter={() => setBackground(true)} onMouseLeave={() => setBackground(false)} style={{position:'relative', zIndex:'10'}}>asdf</main>
     </div>
   )
 }
